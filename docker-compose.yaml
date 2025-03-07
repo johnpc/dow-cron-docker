@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dow-cron:
+    image: mrorbitman/dow-cron:latest
+    container_name: dow-cron
+    restart: always
+    environment:
+      - SONARR_URL=http://sonarr:8989  # Replace with your Sonarr URL
+      - SONARR_API_KEY=your_api_key    # Replace with your Sonarr API key
+      - TZ=America/New_York            # Set your timezone
+    volumes:
+      - ./logs:/var/log                # Optional: Map logs directory to host
